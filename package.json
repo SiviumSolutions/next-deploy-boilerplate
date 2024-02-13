@@ -7,10 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "pages:build": "npx @cloudflare/next-on-pages",
-    "production": "yarn build && pm2 start ecosystem.config.js --env production",
-    "monit": "pm2 logs",
-    "gitupdate": "git reset --hard && git pull && yarn --frozen-lockfile && yarn production"
+    "pages:build": "npx @cloudflare/next-on-pages"
   },
   "dependencies": {
     "next": "14.1.0",
@@ -18,9 +15,6 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "express": "^4.18.2",
-    "pm2": "^5.3.1",
-    "dotenv": "^16.4.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
