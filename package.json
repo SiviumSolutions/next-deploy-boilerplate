@@ -1,24 +1,31 @@
 {
-  "name": "ubuntu-next-app",
+  "name": "deploy-demo",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "production": "yarn build && pm2 start ecosystem.config.js --env production",
+    "monit": "pm2 logs",
+    "gitupdate": "git reset --hard && git pull && yarn --frozen-lockfile && yarn production"
   },
   "dependencies": {
+    "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.1.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "express": "^4.18.2",
+    "pm2": "^5.3.1",
+    "dotenv": "^16.4.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.1.0"
+    "eslint-config-next": "14.1.0",
+    "typescript": "^5"
   }
 }
